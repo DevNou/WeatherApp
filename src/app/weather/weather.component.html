@@ -1,15 +1,27 @@
 <div class="MyContainer">
-    <div class="card text-white bg-success m-5" style="max-width: 18rem;">
-        <div class="card-header text-center">
-            <h2>Thessaloniki</h2>
-            <p>Image srv</p>
+  <h1>Weather Application</h1>
 
-        </div>
-        <div class="card-body">
-          <p class="card-text">Summary: Rain </p>
-          <p class="card-text">Temperature: 50° </p>
-          <p class="card-text">Feels like: 52° </p>
-          <p class="card-text">Humidity: 50%</p>
-        </div>
-      </div>
+  <form class="my-form">
+    <div class="form-group">
+      <input type="text" id="input" name="city" class="btn btn-success btn-m form-control mr-5" placeholder="Enter a City name" autocomplete="off" [(ngModel)]="name">
+      <button type="button" id="buttonWeather" (click)="getWeather(name)" class="btn btn-success btn-m">Get Weather🌡️</button>
+      <button type="deleteButton" class="btn btn-success btn-m"  *ngIf="name" (click)="clearInput()">Clear Input</button>
+    </div>
+  </form>
+  <div *ngIf="this.data" class="card text-white bg-success m-5" style="max-width: 18rem;">
+
+    <div class="card-header text-center">
+      <h2>{{name}}</h2>
+      <p><img src="{{iconURL}}"></p>
+    </div>
+
+    <div class="card-body">
+      <p class="card-text">Summary: {{summary}} </p>
+      <p class="card-text">Temperature: {{temperature}} °C</p>
+      <p class="card-text">Feels like: {{feelsLikeTemp}} °C </p>
+      <p class="card-text">Humidity: {{humidity}} %</p>
+      <p class="card-text">Wind Speed: {{wind}}</p>
+    </div>
+
+  </div>
 </div>

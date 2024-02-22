@@ -6,3 +6,13 @@
     align-items: center;
     
 }
+h1
+{
+    color: green;
+    text-align: center;
+    text-decoration: underline;
+    margin-top: 18.75rem;
+}
+#buttonWeather:hover{
+    color: red;
+}
